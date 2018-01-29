@@ -84,7 +84,7 @@ def requires_auth(f):
 # Controllers API
 @APP.route('/')
 def home():
-    return redirect('/login')
+    return auth0.authorize(callback=AUTH0_CALLBACK_URL)
 
 
 @APP.route('/callback')
