@@ -83,9 +83,11 @@ def requires_auth(f):
 
 # Controllers API
 @APP.route('/')
-def home():
-    return auth0.authorize(callback=AUTH0_CALLBACK_URL)
-
+@requires_auth
+def dashboard():
+    return render_template('dashboard.html',
+                           userinfo=session[constants.PROFILE_KEY],
+                           userinfo_pretty=json.dumps(session[constants.JWT_PAYLOAD], indent=4))
 
 @APP.route('/callback')
 def callback_handling():
@@ -107,7 +109,7 @@ def callback_handling():
         'picture': userinfo['picture']
     }
 
-    return redirect('/dashboard')
+    return redirect('/')
 
 
 @APP.route('/login')
@@ -118,17 +120,8 @@ def login():
 @APP.route('/logout')
 def logout():
     session.clear()
-    params = {'returnTo': url_for('home', _external=True), 'client_id': AUTH0_CLIENT_ID}
+    params = {'returnTo': 'https://d.dis.gg', 'client_id': AUTH0_CLIENT_ID}
     return redirect(auth0.base_url + '/v2/logout?' + urlencode(params))
-
-
-@APP.route('/dashboard')
-@requires_auth
-def dashboard():
-    return render_template('dashboard.html',
-                           userinfo=session[constants.PROFILE_KEY],
-                           userinfo_pretty=json.dumps(session[constants.JWT_PAYLOAD], indent=4))
-
 
 if __name__ == "__main__":
     APP.run(host='0.0.0.0', port=env.get('PORT', 3000))
