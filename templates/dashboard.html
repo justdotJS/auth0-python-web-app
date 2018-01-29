@@ -1,23 +1,92 @@
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="dotJS">
 
-        <!-- font awesome from BootstrapCDN -->
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-        <link href="/public/app.css" rel="stylesheet">
-    </head>
-    <body class="home">
-        <div class="container">
-            <div class="login-page clearfix">
+    <title>dis.gg dashboard</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cyborg/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://about.dis.gg/css/main.css" rel="stylesheet">
+    <style>
+        .press,
+        .press:hover {
+            text-transform:none!important;
+            color:inherit!important
+        }
+    </style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+         WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapser" style="border:none;margin-top:12px">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" style="padding: 6px 4px 0 8px;">
+                    <img alt="dis.gg main" src="disgg.png" width="38" />
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="collapser">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="https://dis.gg/join">Chat</a>
+                    </li>
+                    <li>
+                        <a href="/logout">Logout</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" onclick="alert('Coming Soon')">Terms</a></li>
+                    <li><a href="#" onclick="alert('Coming Soon')">Privacy</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--<div class="login-page clearfix">
                 <div class="logged-in-box auth0-box logged-in">
                     <h1 id="logo"><img src="https://about.dis.gg/disgg.png" /></h1>
                     <img class="avatar" src="{{userinfo['picture']}}"/>
                     <h2>Welcome {{userinfo['name']}}</h2>
-                    <!--<pre>{{userinfo_pretty}}</pre>-->
                     <a class="btn btn-primary btn-lg btn-logout btn-block" href="/logout">Logout</a>
                 </div>
+            </div>-->
+    
+    <h1>dis.gg dashboard</h1>
+    <div class="container">
+        <br>
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 id="about" class="page-header">Welcome {{userinfo['name']}}
+                </h2>
             </div>
         </div>
-    </body>
+        <p class="lead">dis.gg - a group of services on the dis.gg domain.</p><p>We keep adding new services every day. Some of our services include a image service, link shortener, and paste bin.</p>
+        <hr>
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; dotJS 2018. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://crate.widgetbot.io/v2" defer async>new Crate({"server":"268970339948691456","channel":"384933590439428096","options":"0102","beta":true,colors: { toggle: "#2e3136", "background": "#000000", "button": "#ff8800" },"logo":"discord",})</script>
+</body>
 </html>
