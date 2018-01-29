@@ -36,13 +36,16 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#" style="padding: 6px 4px 0 8px;">
-                    <img alt="dis.gg main" src="disgg.png" width="38" />
+                    <img alt="dis.gg main" src="https://about.dis.gg/disgg.png" width="38" />
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="collapser">
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="https://dis.gg/join">Chat</a>
+                    </li>
+                    <li>
+                        <a href="https://about.dis.gg">Services</a>
                     </li>
                     <li>
                         <a href="/logout">Logout</a>
@@ -64,17 +67,17 @@
                     <a class="btn btn-primary btn-lg btn-logout btn-block" href="/logout">Logout</a>
                 </div>
             </div>-->
-    
+    <img style="text-align:center" alt="avatar" src="{{userinfo['picture']}}" width="100" />
     <h1>dis.gg dashboard</h1>
     <div class="container">
         <br>
         <div class="row">
             <div class="col-lg-12">
-                <h2 id="about" class="page-header">Welcome {{userinfo['name']}}
+                <h2 id="about" class="page-header">Welcome, {{userinfo['name']}}!
                 </h2>
             </div>
         </div>
-        <p class="lead">dis.gg - a group of services on the dis.gg domain.</p><p>We keep adding new services every day. Some of our services include a image service, link shortener, and paste bin.</p>
+        <p class="lead">You are a donator. Thanks for subscribing to dis.gg premium.</p>
         <hr>
         <footer>
             <div class="row">
